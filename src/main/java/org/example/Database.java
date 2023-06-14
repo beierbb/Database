@@ -12,6 +12,7 @@ public class Database {
     private static Connection conn = null;
     private static Statement stmt = null;
 
+//run the create table and connection methods
     public Database() {
         createConnection();
         createFileTable();
@@ -47,6 +48,7 @@ public class Database {
         }
     }
 
+    //insert in information and organize the table
     public boolean execAction (String qu) {
         try{
             stmt = conn.createStatement();
@@ -59,6 +61,7 @@ public class Database {
         }
     }
 
+    //retrieve information and organize the table
     public ResultSet execQuery (String query) {
         ResultSet resultSet;
         try {

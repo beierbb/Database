@@ -7,6 +7,8 @@ import java.util.LinkedList;
 
 public class Main {
     static Database handler;
+
+    //add values into the table
     public static void add(String name, String path, String extension, String size){
         boolean flag = name.isEmpty() || path.isEmpty() || extension.isEmpty() || size.isEmpty();
         if (flag) {
@@ -24,6 +26,8 @@ public class Main {
             System.out.println("info not entered");
         }
     }
+
+    //get file values from the directory
     public static void main(String[] args){
         handler = new Database();
         File directory = new File("/Users/bettybao/Documents/GitHub/Module4-databases/");
@@ -60,6 +64,7 @@ public class Main {
         return fileLinkedList;
     }
 
+    //display all four fields from the file table
     public static void printFiles() throws SQLException{
         String qu = "SELECT * FROM FILE";
         ResultSet rs = handler.execQuery(qu);
